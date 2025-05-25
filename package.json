@@ -16,7 +16,7 @@
     "docker:dev": "docker run -d -p 3000:4200 -v testserverdata:/app/testserver/data -v /app/testserver/node_modules -v   E:/Education/Docker/testserver:/app/testserver --name testserver --rm testserver ",
     "docker:push": "docker push avelcorvin/testserver",
     "redis": "docker run -p 6379:6379 -v redisBase --name some-redis -d redis",
-    "mysql": "docker run -p  127.0.0.1:3306:3306 -v mysqlBase:/app/testserver/data --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest"
+    "mysql": "docker run -p 127.0.0.1:3306:3306 -v mysqlBase:/app/testserver/data --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest"
   },
   "author": "v.korban",
   "license": "ISC",
