@@ -1,0 +1,50 @@
+{
+  "name": "testserver",
+  "version": "0.0.1",
+  "description": "Des terver for development and test some things",
+  "main": "app.js",
+  "browser": {
+    "[module-name]": false
+  },
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "build:react": "npx webpack --config webpack.config.js --watch",
+    "docker:build": "docker build -t testserver .",
+    "docker:deploy": "docker run -d -p 3000:4200  --name testserver --rm testserver ",
+    "docker:dev": "docker run -d -p 3000:4200 -v testserverdata:/app/testserver/data -v /app/testserver/node_modules -v   E:/Education/Docker/testserver:/app/testserver --name testserver --rm testserver ",
+    "docker:push": "docker push avelcorvin/testserver",
+    "redis": "docker run -p 6379:6379 -v redisBase --name some-redis -d redis",
+    "mysql": "docker run -p  127.0.0.1:3306:3306 -v mysqlBase:/app/testserver/data --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest"
+  },
+  "author": "v.korban",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.4",
+    "pug": "^3.0.3",
+    "redis": "^4.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.5",
+    "@types/pug": "^2.0.10",
+    "@types/react": "^18.3.7",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "style-loader": "^4.0.0",
+    "typescript": "^5.5.4",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

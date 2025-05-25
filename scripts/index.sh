@@ -1,0 +1,1 @@
+docker run -d -p 3000:4200 --name testserver --rm avelcorvin/testserver 
